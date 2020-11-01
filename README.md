@@ -8,6 +8,7 @@
 - source Tree (git visualizer tool)
 - node.js
 - create-react-app
+- vs-code
 - yarn
 
 
