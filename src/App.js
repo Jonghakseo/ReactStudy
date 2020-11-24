@@ -1,27 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { HashRouter, Route } from "react-router-dom";
+// import "./styles.css";
 
-function App() {
+import Sidebar from "./components/Sidebar";
+import Home from './routes/Home';
+import About from './routes/About';
+import Contact from './routes/Contact';
+import Portfolio from './routes/Portfolio';
+
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Editff
-          <code>src/App.js</code>
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          리액트 스터디!
-        </a>
-      </header>
+    <div >
+      <HashRouter>
+        <Sidebar />
+        <Route path="/" exact component={Home}></Route>
+        <Route path="/about"  component={About}></Route>
+        <Route path="/portfolio" component={Portfolio}></Route>
+        <Route path="/contact" component={Contact}></Route>         
+      </HashRouter>
+
     </div>
   );
 }
-
-export default App;
